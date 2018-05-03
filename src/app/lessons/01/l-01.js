@@ -382,7 +382,7 @@ console.log('\nLesson 01 - Homework:\n\n!!! Please answer the questions in this 
 
 // Task 01.01 - 1 point
 // Question: Can JavaScript file contain non-executable code?
-// Answer: Yes
+// Answer: No
 
 // Task 01.02 - 2 points
 // Question: How we can tell the JS interpreter to use strict mode?
@@ -390,7 +390,7 @@ console.log('\nLesson 01 - Homework:\n\n!!! Please answer the questions in this 
 
 // Task 01.03 - 2 points
 // Q: What simple data types are used in JS?
-// A: number, string, boolean
+// A: number, string, boolean, null, undefined
 
 // Task 01.04 - 2 points
 // Q: What complex data types are used in JS?
@@ -398,7 +398,7 @@ console.log('\nLesson 01 - Homework:\n\n!!! Please answer the questions in this 
 
 // Task 01.05 - 3 points
 // Q: Please write a function which calculates the difference between two numbers
-// A: TODO
+// A: function diff(a, b) {return Math.abs(a - b);}
 
 // Task 01.06 - 3 points
 // Q: Please write what result did you get in console in Task 01.01
