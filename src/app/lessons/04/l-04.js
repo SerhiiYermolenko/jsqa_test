@@ -529,10 +529,27 @@ console.log('\nTask 04.01');
 // Використай метод push, щоб додати до масиву ще одне просте число.
 // TODO: пиши код тут:
 
-let primeNumbers;
+
+function setPrime(count)
+{
+	let result = [];
+	next:
+	for(let i = 2; result.length !== count; i++)
+	{
+		for(let j = 2; j < i; j++)
+		{
+			if(i%j == 0)continue next;
+		}
+
+		result.push(i);
+	}
+	return result;
+};
+let primeNumbers = setPrime(11);
+
 
 // Цей код тестує завдання:
-if (primeNumbers && primeNumbers.length === 10) {
+if (primeNumbers && primeNumbers.length === 11) {
 	console.log('Task 04.01 is DONE! ');
 } else {
 	console.log('Please make Task 04.01');
@@ -545,8 +562,13 @@ console.log('\nTask 04.02');
 // Напиши функцію sortNumbers і використай її у методі sort масиву primeNumbers для того, 
 // щоб відсортувати його елементи у зворотньому порядку.
 // TODO: пиши код тут:
+
+function sortNumbers(a, b){return b - a;};
+
+primeNumbers.sort(sortNumbers);
+
 // Цей код тестує завдання:
-if (primeNumbers && primeNumbers[0] && primeNumbers[0] === 29) {
+if (primeNumbers && primeNumbers[0] && primeNumbers[0] === 31) {
 	console.log('Task 04.02 is DONE! ');
 } else {
 	console.log('Please make Task 04.02');
@@ -560,6 +582,11 @@ console.log('\nTask 04.03');
 // Points: 2
 // За допомогою методу splice виріж з масиву елементи з другого по третій і при цьому заміни їх на рядок 'foo'.
 // TODO: пиши код тут:
+
+
+primeNumbers.splice(2, 2, 'foo');
+
+
 if (primeNumbers && primeNumbers[2] === 'foo') {
 	console.log('Task 04.03 is DONE! ');
 } else {
@@ -568,13 +595,17 @@ if (primeNumbers && primeNumbers[2] === 'foo') {
 
 
 
-
-
 console.log('\nTask 04.04');
 // Points: 2 
 // Використай метод Array.forEach для того, 
 // щоб додати до кожного елементу масиву [21, 63, 84] число '42'
 // TODO: пиши свій код тут:
+
+let array = [];
+[21, 63, 84].forEach((val, index, arr) =>{
+	array[index] = val + 42;
+});
+
 console.log('Please make Task 04.04');
 
 
@@ -590,8 +621,7 @@ var crazyMix = [1, '1', true, 2, '02', 3, '0', '10', 11, [], {}, function() {}];
 // щоб вона повертала масив, до якого входять тільки числа з вхідного масиву 'arrayToCleanUp':
 
 function arrayCleanUp(arrayToCleanUp) {
-	var cleanedUp = arrayToCleanUp;
-	// TODO: пиши свій код тут:
+	var cleanedUp = arrayToCleanUp.filter(e => typeof e === 'number');
 	return cleanedUp;
 }
 
@@ -621,7 +651,15 @@ var matrix = [
 ];
 
 function findMaxInMatrix(mtx) {
-	// TODO: пиши свій код тут:
+	let max = 0;
+	for(let i = 0; i < mtx.length; i++)
+	{
+		for(let j = 0; j < mtx[0].length; j++)
+		{
+			if(mtx[i][j] > max) max = mtx[i][j];
+		}
+	}
+	return max;
 }
 
 var res = findMaxInMatrix(matrix);
