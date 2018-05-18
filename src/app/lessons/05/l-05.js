@@ -523,7 +523,7 @@ console.h1('Task 05.01');
 // Запиши її назву у нову глобальну змінну 'createdByConstructor'.
 // TODO: пиши свій код тут:
 
-let createdByConstructor;
+let createdByConstructor = "birthdayDate";
 
 if (createdByConstructor && createdByConstructor === 'birthdayDate') {
 	console.log('\n\tThanks! This task is done');
@@ -541,39 +541,63 @@ console.log('\n\tPlease implement this task and few tests to check it');
 // 1. var a;
 // 2. var b = 10;
 // 3. const c = "20";
-// 4. d = function(){};
+// 4. d = function(){}; цей
 // 
 // 
 // 05.02.2 Створи змінні наступних типів. Для тих типів, де це неможливо, напиши коментар "Типу не існує"
 // 
 // 1. string
-// 2. char
-// 3. int
-// 4. float
+// 2. char типу не існує
+// 3. int типу не існує
+// 4. float типу не існує
 // 5. boolean
-// 6. interface
+// 6. interface типу не існує
 // 7. undefined
 // 
+let stringVar = "string";
+let booleanVar = true;
+let undefinedVar = undefined;
+
+let types = [];
+types.push(stringVar, booleanVar, undefinedVar)
+let counter = 0;
+for(let key in types)
+{
+	if(	typeof key === 'number' || typeof key === 'string' ||
+		typeof key === 'undefined' || typeof key === 'null' ||
+		typeof key === 'boolean' || typeof key === 'object' ||
+		typeof key === 'symbol' || typeof key === 'function')
+		{
+			counter++;
+		}
+
+	if(counter === types.length)
+	{
+		console.log('\n\tThanks! This task is done');
+	}
+}
+
+
 // 
 // 05.02.3 Знайди тут оператор строгого порівняння та випишіть його:
 // 
 // 1. 'use strict'
 // 2. ==
 // 3. &&
-// 4. ===
+// 4. ===  цей
 // 5. EQ
 // 
 // 
 // 05.02.4 Який з цих виразів є помилковим?
 // 
 // 1. x * y == z
-// 2. x + y = z
+// 2. x + y = z цей
 // 3. x = y + (z = i / (k = m * n))
 // 
 // 
 // 05.02.5 Який з цих операторів означає "логічне АБО"?
 // 
-// 1. ||
+// 1. || цей
 // 2. OR
 // 3. |
 // 
@@ -582,20 +606,20 @@ console.log('\n\tPlease implement this task and few tests to check it');
 // 
 // 1. AND
 // 2. and
-// 3. &&
+// 3. && цей
 // 4. &
 // 
 // 
 // 05.02.7 Чи правда, що оператор ‘typeof’ використовується для:
 // 
-// 1. Отримання назви типу?
-// 2. Отримання посилання на констуктор?
+// 1. Отримання назви типу? так
+// 2. Отримання посилання на констуктор? ні
 // 
 // 
 // 05.02.8 Які з цих прикладів є невірним використанням оператора умовного присвоєння?
 // 
-// 1. var y = x := z | m;
-// 2. var y = x : z ? m;
+// 1. var y = x := z | m; цей
+// 2. var y = x : z ? m; цей
 // 3. var y = x ? z : m;
 // 
 // 
@@ -605,14 +629,14 @@ console.log('\n\tPlease implement this task and few tests to check it');
 // 1. (function w(){})()
 // 2. var function x(){}
 // 3. var z = new Function('argument', '// TODO')
-// 4. var y = function(){}
+// 4. var y = function(){} цей
 // 
 // 
 // 
 // 05.02.10 Де конкатенація рядків зроблена з помилкою?
 // 
 // 1. "str1" + "str2"
-// 2. "str1" ~ "str2"
+// 2. "str1" ~ "str2" тут
 // 3. "str1".concat("str2")
 // 3. String.concat("str1", "str2")
 
@@ -621,7 +645,10 @@ console.h1('Task 05.03');
 // Points: 2
 // Знайди у файлові даного уроку перший коментар, що починається з "// FIXME" і виконай його,
 // записавши результуючий код тут.
-
+function Tree(name) {
+	this.name = name
+	console.log(this.name);
+}
 // TODO: пиши код тут:
 console.log('\n\tPlease implement this task');
 
