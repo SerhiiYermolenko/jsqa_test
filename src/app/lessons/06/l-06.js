@@ -350,9 +350,13 @@ const glo = 'glo site';
 	// функцію cube, що приймає один числовий параметр і повертає куб від цього числа.
 	// TODO: пишіть свій код тут:
 
+	let cubeExp = e => Math.pow(e, 3);
+
+	function cubeDecl(e){return Math.pow(e, 3)};
+
+
+
 	console.log('\nPlease implement this task');
-
-
 
 
 
@@ -360,6 +364,12 @@ const glo = 'glo site';
 	// Points: 2
 
 	// Спробуй відповісти, не запускаючи код на виконнання: що код виведе у консоль?
+	//log from function scope:
+	//LOCAL1
+	//LOCAL2
+	//log from global scope:
+	//global1
+	//LOCAL2
 	// TODO: пиши відповідь тут:
 
 	console.log('\nPlease implement this task');
@@ -394,6 +404,19 @@ const glo = 'glo site';
 
 	// TODO: код тут:
 
+	var global1 = 'global1';
+	var global2 = 'global2';
+
+	var function1 = function () {
+		global1 = 'LOCAL1';
+		global2 = 'LOCAL2';
+		console.log('log from function scope: \n', global1, '\n', global2);
+	};
+
+	function1();
+
+	console.log('log from global scope: \n', global1, '\n', global2);
+
 	console.log('\nPlease implement this task');
 
 
@@ -412,6 +435,19 @@ const glo = 'glo site';
 	// з консолі показував global2 замість LOCAL2
 
 	// TODO: код тут:
+
+	var global1 = 'global1';
+	var global2 = 'global2';
+
+	var function1 = function () {
+		global1 = 'LOCAL1';
+		var global2 = 'LOCAL2';
+		console.log('log from function scope: \n', global1, '\n', global2);
+	};
+
+	function1();
+
+	console.log('log from global scope: \n', global1, '\n', global2);
 
 	console.log('\nPlease implement this task');
 
@@ -433,11 +469,19 @@ const glo = 'glo site';
 
 	// TODO: пишіть свій код тут:
 
+	function blackBox(hidden){
+		return function insider(hidden){
+			return hidden;
+		};
+	};
+
+	console.log(blackBox("secret"));
+
 	console.log('\nPlease implement this task');
 
 
 
 
 	console.log('\nLesson 06 - Homework End');
-
 })();
+
